@@ -20,31 +20,3 @@
 |kong|网关
 |jenkins|自动化部署|https://github.com/jenkinsci/jenkins
 
-### 目录
-- [Grpc快速入门](#Grpc快速入门)
-
-### Grpc快速入门
-#### Grpc安装
-1. 安装插件
-```bash
-go get google.golang.org/protobuf/cmd/protoc-gen-go
-go get google.golang.org/grpc/cmd/protoc-gen-go-grpc
-```
-2. 安装protoc   
-https://github.com/protocolbuffers/protobuf/releases/tag/v3.17.3 下载压缩包  
-3. 解压安装
-4. 将安装包下/bin目录加入环境变量并重启ide或则终端
-5. 运行以下命令，标识安装成功
-```bash
-protoc --version
-libprotoc 3.17.3
-```
-#### Grpc Hello world
-1. 定义proto文件  
-示例代码项目目录example/grpc-example/proto
-2. 生成代码，进入示例代码目录,运行以下命令,生成对应的hello.pb.go和hello_grpc.pb.go文件 
-```bash
-protoc --go_out=. --go-grpc_out=. .\hello.proto
-```
-3. 在确保路径，proto文件没有错误后还是不能生成对应的pb文件请优先检查protoc、protoc-gen-go、protoc-gen-go-grpc版本
-4. 参照example/grpc-example/server example/grpc-example/client的示例代码实现grpc的服务端、客户端
